@@ -35,15 +35,18 @@ DB_PASS=$(wp config get DB_PASSWORD)
 table_prefix=$(wp config get table_prefix)
 
 echo "$DB_NAME $DB_USER $table_prefix"
-rm -rf wp-admin
-rm -rf wp-includes 
-rm -rf .tmb 
-rm -rf .quarantine 
+# rm -rf wp-admin
+# rm -rf wp-includes 
+# rm -rf .tmb 
+# rm -rf .quarantine 
+find . ! -path "./wp-content/*" ! -name .htaccess ! -name wp-config.php -delete
 wp core download --force --skip-content
 wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbprefix=$table_prefix
+wp theme delete twentytwenty twentynineteen twentyseventeen
 wp plugin update --all
 
 # cd wp-content/uploads/
+# find . ! -path "./avia_fonts/*" -name *.php
 # find . -not -path "./avia_fonts/*" -name *.php
 # find . -name "*.php" -type f -delete
 # find . -name "*.ico" -type f -delete
