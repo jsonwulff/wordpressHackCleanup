@@ -38,5 +38,5 @@ rm -rf wp-includes
 rm -rf .tmb 
 rm -rf .quarantine 
 wp core download --force --skip-content
-wp config create --force --dbname='${DB_NAME}' --dbuser='${DB_USER}' --dbpass='${DB_PASS}' --dbprefix='${table_prefix}'
+wp config create --force --dbname='$DB_NAME' --dbuser='$DB_USER' --dbpass='$DB_PASS' --dbprefix='$table_prefix'
 wp plugin update --all
