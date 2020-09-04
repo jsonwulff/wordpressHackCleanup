@@ -43,9 +43,10 @@ wp core download --force --skip-content
 wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbprefix=$table_prefix
 wp plugin update --all
 
-cd wp-content/uploads/
-find . -name "*.php" -type f -delete
-find . -name "*.ico" -type f -delete
+# cd wp-content/uploads/
+# find . -not -path "./avia_fonts/*" -name *.php
+# find . -name "*.php" -type f -delete
+# find . -name "*.ico" -type f -delete
 
 # pluginList=$(wp plugin list --format=csv --fields=name)
 # pluginList=${pluginList:5}
@@ -55,3 +56,7 @@ find . -name "*.ico" -type f -delete
 # if [[ $string == *"My long"* ]]; then
 #   echo "It's there!"
 # fi
+
+# find /directory/ -type f -not -name 'PATTERN'
+# find . -type f -not \(-name '*gz' -or -name '*odt' -or -name '*.jpg' \)
+# find . -type f -not \(-name '*.php' \)
