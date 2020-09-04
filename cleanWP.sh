@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Web 1
-# ssh -i ~/.ssh/id_rsa aapholm@35.198.126.236
-# ssh -i ~/.ssh/id_rsa @35.198.126.236
-# ssh -i ~/.ssh/id_rsa @35.198.126.236
+# ssh -i ~/.ssh/id_rsa auto-flex@35.198.126.236
+# ssh -i ~/.ssh/id_rsa komboel@35.198.126.236
+# ssh -i ~/.ssh/id_rsa westen-el@35.198.126.236
 # Web 2
-# ssh -i ~/.ssh/id_rsa perssons-fugefirma@35.198.66.42
+# ssh -i ~/.ssh/id_rsa axdal-flyt@35.198.66.42
+# ssh -i ~/.ssh/id_rsa westen-el@35.198.66.42
 # cd apps/$appName/public
 # ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
 
@@ -41,7 +42,7 @@ echo "$DB_NAME $DB_USER $table_prefix"
 # rm -rf wp-includes 
 # rm -rf .tmb 
 # rm -rf .quarantine 
-find . ! -path "./wp-content" ! -name .htaccess ! -name wp-config.php -delete
+find . ! -path "./wp-content/*" ! -name "wp-content" ! -name .htaccess ! -name wp-config.php -delete
 wp core download --force --skip-content
 wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbprefix=$table_prefix
 wp theme delete twentytwenty twentynineteen twentyseventeen
