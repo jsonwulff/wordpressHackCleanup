@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Web 1
-# ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
+# ssh -i ~/.ssh/id_rsa minut-rens@35.198.126.236
 # Web 2
 # ssh -i ~/.ssh/id_rsa perssons-fugefirma@35.198.66.42
 # cd apps/$appName/public
 # ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
+
+#git clone https://github.com/jsonwulff/wordpressHackCleanup.git
 
 # wp config get DB_NAME && \
 # wp config get DB_USER && \
@@ -41,8 +43,9 @@ wp core download --force --skip-content
 wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbprefix=$table_prefix
 wp plugin update --all
 
-rm -rf wp-content/uploads/*.php
-rm -rf wp-content/uploads/*.ico
+cd wp-content/uploads/
+find . -name "*.php" -type f -delete
+find . -name "*.ico" -type f -delete
 
 # pluginList=$(wp plugin list --format=csv --fields=name)
 # pluginList=${pluginList:5}
