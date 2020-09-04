@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Web 1
-# ssh -i /Users/julianwulff/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
+# ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
 # Web 2
-# ssh -i /Users/julianwulff/.ssh/id_rsa perssons-fugefirma@35.198.66.42
+# ssh -i ~/.ssh/id_rsa perssons-fugefirma@35.198.66.42
 # cd apps/$appName/public
+# ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
 
 # wp config get DB_NAME && \
 # wp config get DB_USER && \
@@ -25,14 +26,9 @@ read appName
 echo "Enter username"
 read userName
 
-ssh -i /Users/julianwulff/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
+cd apps/$appName/public
+DB_NAME=$(wp config get DB_NAME)
+DB_USER=$(wp config get DB_USER)
+table_prefix=$(wp config get table_prefix)
 
-echo "cd apps/$appName/public"
-
-
-# cd apps/$appName/public
-# DB_NAME=$(wp config get DB_NAME)
-# DB_USER=$(wp config get DB_USER)
-# table_prefix=$(wp config get table_prefix)
-
-# echo ($DB_NAME)
+echo ($DB_NAME)
