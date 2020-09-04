@@ -26,9 +26,17 @@ read appName
 echo "Enter username"
 read userName
 
-cd apps/$appName/public
+cd ../apps/$appName/public
 DB_NAME=$(wp config get DB_NAME)
 DB_USER=$(wp config get DB_USER)
+DB_PASS=$(wp config get DB_PASSWORD)
 table_prefix=$(wp config get table_prefix)
 
-echo ($DB_NAME)
+echo "$DB_NAME $DB_USER $table_prefix"
+rm -rf wp-admin
+rm -rf wp-includes 
+rm -rf .tmb 
+rm -rf .quarantine 
+wp core download --force --skip-content
+wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass='${DB_PASS}' --dbprefix=$table_prefix
+wp plugin update --all
