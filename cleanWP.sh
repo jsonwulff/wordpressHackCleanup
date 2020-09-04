@@ -40,3 +40,15 @@ rm -rf .quarantine
 wp core download --force --skip-content
 wp config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbprefix=$table_prefix
 wp plugin update --all
+
+rm -rf wp-content/uploads/*.php
+rm -rf wp-content/uploads/*.ico
+
+# pluginList=$(wp plugin list --format=csv --fields=name)
+# pluginList=${pluginList:5}
+
+
+# string='My long string'
+# if [[ $string == *"My long"* ]]; then
+#   echo "It's there!"
+# fi
