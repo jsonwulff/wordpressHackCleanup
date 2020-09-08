@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# rm -rf wp-admin && \
-# rm -rf wp-includes && \
-# rm -rf .tmb && \
-# rm -rf .quarantine && \
-# wp core download --force --skip-content  && \
-# wp plugin uninstall hello akismet --deactivate --quiet && \
-# wp plugin update --all 
-
 echo "Be sure to add your ssh key to the user"
 echo "Enter app name:"
 read appName
