@@ -1,27 +1,10 @@
 #!/bin/bash
 
-# Web 1
-# ssh -i ~/.ssh/id_rsa auto-flex@35.198.126.236
-# ssh -i ~/.ssh/id_rsa komboel@35.198.126.236
-# ssh -i ~/.ssh/id_rsa westen-el@35.198.126.236
-# Web 2
-# ssh -i ~/.ssh/id_rsa axdal-flyt@35.198.66.42
-# ssh -i ~/.ssh/id_rsa westen-el@35.198.66.42
-# cd apps/$appName/public
-# ssh -i ~/.ssh/id_rsa perssonsgulvteknik@35.198.126.236
-
-#git clone https://github.com/jsonwulff/wordpressHackCleanup.git
-
-# wp config get DB_NAME && \
-# wp config get DB_USER && \
-# wp config get table_prefix
-
 # rm -rf wp-admin && \
 # rm -rf wp-includes && \
 # rm -rf .tmb && \
 # rm -rf .quarantine && \
 # wp core download --force --skip-content  && \
-# wp config create --force --dbname=perssons-fugefirma-wp-Eyo1WCSi --dbuser=D760P1Cuxy6r --dbpass='!9H&f4^7pNC8cLD$ff6sCO6NBIxNI6Z2' --dbprefix=wp_74275dd1a3_ && \
 # wp plugin uninstall hello akismet --deactivate --quiet && \
 # wp plugin update --all 
 
